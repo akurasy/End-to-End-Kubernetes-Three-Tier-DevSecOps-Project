@@ -10,4 +10,14 @@ add another credentials for github. create credentioaals, kind using username an
 use your git username and access key token to create credential for github. use this token for password
 goto manage jenkins ===> tools ====> terraform , name the tools, and put the terraform directory path /usr/bin/terraform.
 
+now we are set to deploy our infrastructure
+
+goto the repo where we have our terraform script for eks and oher parameters 
+
+goto create job === pipeline job ==== use pipeline script 
+paste the content of the github link https://github.com/akurasy/EKS-Terraform-GitHub-Actions/blob/master/Jenkinsfile
+save and run the job
+
+
+
 
