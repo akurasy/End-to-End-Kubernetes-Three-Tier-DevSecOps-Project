@@ -1,0 +1,13 @@
+the project steps can be found in this article. but i will like to create my own steps in a more understanding way. 
+https://blog.stackademic.com/advanced-end-to-end-devsecops-kubernetes-three-tier-project-using-aws-eks-argocd-prometheus-fbbfdb956d1a
+
+first set up aws uvuntu linux server with t2.large or t2 medium. t2.large is recommended for fast process
+goto project application code =====> frontend and copy the content of installation file (.sh ext) to install all dependencies of thios project
+login to jenkibns server using the credentails for jenkins
+on jenkins, goto manage jenkins, plugs, install the following plugins : aws credentials, Pipeline: AWS Steps, terraform and pipeline: stage view
+goto manage jenkins, credential, select global, add credentials, chnage kind to aws credentials, add our access key and secret key, then create.
+add another credentials for github. create credentioaals, kind using username and password
+use your git username and access key token to create credential for github. use this token for password
+goto manage jenkins ===> tools ====> terraform , name the tools, and put the terraform directory path /usr/bin/terraform.
+
+
