@@ -21,9 +21,14 @@ edit to suitable configurations, save and run the job
 create a jumpserver inside the just create vpc by jenkins server and attach an admin role crrated via IAM to the jumpserver
 the jumpserver will be used to ssh into the eks cluster so we can out kubectl commands.
 
-pls restrict access to this jumpserver
+pls restrict access to this jumpserver and run aws configure on itnusing the access and secret key
 install the following on the jumpserver via userdata, aws cli, eksctl, kubectl, helm. use the script in the link below: 
 https://github.com/akurasy/End-to-End-Kubernetes-Three-Tier-DevSecOps-Project/blob/master/Jenkins-Server-TF/tools-install.sh
+
+connect to the cluster fromt the jumpserver with the command 
+
+aws eks update-kubeconfig --name dev-medium-eks-cluster --region us-west-2
+
 
 
 
