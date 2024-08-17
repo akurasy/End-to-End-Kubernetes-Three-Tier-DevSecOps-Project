@@ -74,9 +74,12 @@ kubectl edit secret
 then copy the password and decode with base 64
 echo NE9qaXJQTVBPOUkxUnJSbg== | base64 --decode
 
-
-
-
+next we need to cobnfigure sonarqub e
+copy the IP of your jenkins server and add port 9000 since sonarqube is already installed on it
+username = admin
+password = admin
+change password to access sonarqube server
+generate sonarqube token for jenkins
 
 
 
