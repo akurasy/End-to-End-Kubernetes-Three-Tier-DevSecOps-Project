@@ -29,6 +29,24 @@ connect to the cluster fromt the jumpserver with the command
 
 aws eks update-kubeconfig --name dev-medium-eks-cluster --region us-west-2
 
+run the command to test
+kubectl get node
+
+now lets configure the loadbalancer since we will be using ingress controller.
+
+Download the policy for the LoadBalancer prerequisite.
+curl -O https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/v2.5.4/docs/install/iam_policy.json
+
+Create the IAM policy using the below command
+aws iam create-policy --policy-name AWSLoadBalancerControllerIAMPolicy --policy-document file://iam_policy.json
+
+Create OIDC Provider
+eksctl utils associate-iam-oidc-provider --region=us-west-2 --cluster=dev-medium-eks-cluster --approve
+
+
+Create a Service Account by using below command and replace your account ID with your one
+eksctl create iamserviceaccount --cluster=dev-medium-eks-cluster --namespace=kube-system --name=aws-load-balancer-controller --role-name AmazonEKSLoadBalancerControllerRole --attach-policy-arn=arn:aws:iam::878726137682:policy/AWSLoadBalancerControllerIAMPolicy --approve --region=us-west-2
+
 
 
 
