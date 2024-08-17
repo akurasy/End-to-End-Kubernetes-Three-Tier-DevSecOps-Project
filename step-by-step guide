@@ -56,6 +56,24 @@ next we set up argocd. create a namespace with the command
 kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/v2.4.7/manifests/install.yaml
 
+now check the argocd deployment with the command 
+kubectl get all -n argocd
+
+then deploy the load balancer by editing the argocd svc and chnage the service type from ClusterIP to LoadBalancer
+it will automatically create a load balancer on aws console.
+
+pls note th cloud control manager of eks is the one creating the load balancer. when we edit the svc, the cloud controller receives the request to create a LB
+
+when you are done deploying, browse the load balancer public dns to access argo cd website.
+login to argocd
+username = admin 
+for password run the command
+kubectl get secret -n argocd
+edit the initial admin secret to reveal the passowrd
+kubectl edit secret 
+then copy the password and decode with base 64
+echo NE9qaXJQTVBPOUkxUnJSbg== | base64 --decode
+
 
 
 
