@@ -16,8 +16,11 @@ goto the repo where we have our terraform script for eks and oher parameters
 
 goto create job === pipeline job ==== use pipeline script 
 paste the content of the github link https://github.com/akurasy/EKS-Terraform-GitHub-Actions/blob/master/Jenkinsfile
-save and run the job
+edit to suitable configurations, save and run the job
 
+create a jumpserver inside the just create vpc by jenkins server
+the jumpserver will be used to ssh into the eks cluster so we can out kubectl commands.
+pls restrict access to this jumpserver
 
 
 
