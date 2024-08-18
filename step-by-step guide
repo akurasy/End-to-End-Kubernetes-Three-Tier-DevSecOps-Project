@@ -81,8 +81,32 @@ password = admin
 change password to access sonarqube server
 generate sonarqube token for jenkins
 
+Now, we have to configure webhooks for quality checks.
+Click on Administration then, Configuration and select Webhooks, Click on Create
+Provide the name of your project and in the URL, provide the Jenkins server public IP with port 8080 add sonarqube-webhook in the suffix, and click on Create.
+http://<jenkins-server-public-ip>:8080/sonarqube-webhook/
 
+still on sonarqube server
+Now, we have to create a Project for frontend code.
+Click on Manually 
+Provide the display name to your Project and click on Setup
+Click on Locally.  Select the Use existing token and click on Continue.
+Select Other and Linux as OS.
+After performing the above steps, you will get the command which you can see in the snippet.
+Now, use the command in the Jenkins Frontend and Backend Pipeline where Code Quality Analysis will be performed.
+now store sonar-token on jenkins
+goto jenkins==== credentials====== create ceredential and select secret as kind
+also create credentials for your aws account ID. store ID ACCOUNT_ID (you can give it any name)
 
+goto AWS ECR and create repo for frontend and backend in a private repo
+create a secret for the ecr repo. 
+for frontend :
+secret = frontend
+ID= ECR_REPO1
+
+for backend
+sceret = backend
+ID= ECR_REPO2
 
 
 
