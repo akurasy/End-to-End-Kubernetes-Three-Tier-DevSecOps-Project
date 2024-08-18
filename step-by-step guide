@@ -116,8 +116,12 @@ owasp dependencies check
 
 now configure the installed tools
 manage jenkins ====== tools
-add nodejs, sonarqube, owasp and docker
+add nodejs, sonarqube, owasp (dependencies check. install automatically from github.com) and docker (install automatically from docker.com)
 
+
+
+the link to the blog to this deployment below:
+https://blog.stackademic.com/advanced-end-to-end-devsecops-kubernetes-three-tier-project-using-aws-eks-argocd-prometheus-fbbfdb956d1a
 
 
 
