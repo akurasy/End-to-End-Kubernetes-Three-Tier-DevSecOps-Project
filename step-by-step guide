@@ -108,8 +108,15 @@ for backend
 sceret = backend
 ID= ECR_REPO2
 
+goto jenkins server and install the following plugins:
+all plugins related to docker
+nodejs (because our app is written in nodejs)
+sonarqube scanner
+owasp dependencies check
 
-
+now configure the installed tools
+manage jenkins ====== tools
+add nodejs, sonarqube, oawsp and docker
 
 
 
