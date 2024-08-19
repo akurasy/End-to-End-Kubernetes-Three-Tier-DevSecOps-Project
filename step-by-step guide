@@ -117,6 +117,15 @@ owasp dependencies check
 now configure the installed tools
 manage jenkins ====== tools
 add nodejs, sonarqube, owasp (dependencies check. install automatically from github.com) and docker (install automatically from docker.com)
+now goto manage jenkins === systems, add sonar server for quality gate. the first one we installed (sonar-scanner) is for code analysis.
+name = sonar-server , url = sonarqube-server-url and save, add sonar-token, apply and save.
+
+now create a pipeline frontend
+create job === name (theree-tier-frontend) ==== select pipeline
+goto the copy and copy the frontend jenkions pipeline script
+https://github.com/akurasy/End-to-End-Kubernetes-Three-Tier-DevSecOps-Project/blob/master/Jenkins-Pipeline-Code/Jenkinsfile-Frontend
+
+
 
 
 
