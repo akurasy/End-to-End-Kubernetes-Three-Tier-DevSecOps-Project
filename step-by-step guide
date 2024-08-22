@@ -122,9 +122,14 @@ name = sonar-server , url = sonarqube-server-url and save, add sonar-token, appl
 
 now create a pipeline frontend
 create job === name (theree-tier-frontend) ==== select pipeline
-goto the copy and copy the frontend jenkions pipeline script
+goto the repo copy and copy the frontend jenkions pipeline script
 https://github.com/akurasy/End-to-End-Kubernetes-Three-Tier-DevSecOps-Project/blob/master/Jenkins-Pipeline-Code/Jenkinsfile-Frontend
-
+remove jdk from the pipeline in line 4. we don't need jdk as dependencies
+make some chnages to suit your own credentials like github username, aws region and others.
+goto line 30 and 31 of the jenkinsfile for the sonarqube scan command and chnage the project name and key to "frontend". because we creaed a project named frontend on sonarqube
+you can comment out the owasp step because of the time it takes to build. if you have time, you can run this.
+if you have isue with the git pull step, goto your jenkins server cli and run whereis git, copy the path /usr/bin/git, then
+goto manage jenkins ===== tools ===== under git === paste the directory path (/usr/bin/git) and save
 
 
 
